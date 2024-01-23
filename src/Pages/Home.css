@@ -4,4 +4,47 @@
     src: url('./../../public/Fonts/Tangerine-Regular.ttf') format('truetype');
     /* Add additional formats if necessary */
   }
+
+
+
+  
+
+  .catalogue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: -20px;
+    padding: 0;
+  }
+  
+  .perfect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+    padding: 0;
+  }
+  
+  .customFont {
+    font-family: 'Tangerine-Regular', cursive;
+    font-size: 100px;
+    color: white;
+    font-weight: -30;
+    margin-bottom: 25px;
+    
+  }
+  
+  @media (max-width: 600px) {
+    .catalogue {
+      margin-top: 60px;
+    }
+  }
+  
+  .customFont2 {
+    color: white;
+    margin-top: -15px;
+    margin-left: 2%;
+    padding: 0;
+  }
   
