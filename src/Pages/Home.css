@@ -1,0 +1,7 @@
+/* styles.css */
+@font-face {
+    font-family: 'Tangerine-Regular';
+    src: url('./../../public/Fonts/Tangerine-Regular.ttf') format('truetype');
+    /* Add additional formats if necessary */
+  }
+  
