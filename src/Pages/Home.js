@@ -6,6 +6,7 @@ import "./Home.css";
 const styles = {
   customFont: {
     fontFamily: "Tangerine-Regular, cursive",
+    fontSize: 100
   },
 };
 
