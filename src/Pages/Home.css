@@ -1,50 +1,41 @@
 /* styles.css */
 @font-face {
-    font-family: 'Tangerine-Regular';
-    src: url('./../../public/Fonts/Tangerine-Regular.ttf') format('truetype');
-    /* Add additional formats if necessary */
-  }
+  font-family: "Tangerine-Regular";
+  src: url("./../../public/Fonts/Tangerine-Regular.ttf") format("truetype");
+  /* Add additional formats if necessary */
+}
 
+.catalogue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: -20px;
+  padding: 0;
+}
 
+.perfect {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+  padding: 0;
+}
 
-  
+.customFont {
+  font-family: "Tangerine-Regular", cursive;
 
-  .catalogue {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5%;
-    margin-bottom: -20px;
-    padding: 0;
-  }
-  
-  .perfect {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -30px;
-    padding: 0;
-  }
-  
-  .customFont {
-    font-family: 'Tangerine-Regular', cursive;
-   
-    color: white;
-    font-weight: -30;
-    margin-bottom: 25px;
-    
-  }
-  
-  @media (max-width: 600px) {
-    .catalogue {
-      margin-top: 60px;
-    }
-  }
-  
-  .customFont2 {
-    color: white;
-    margin-top: -15px;
-    margin-left: 2%;
-    padding: 0;
-  }
-  
+  color: white;
+  font-weight: -30;
+  margin-bottom: 25px;
+}
+
+.customFont2 {
+  color: white;
+  margin-top: -15px;
+  margin-left: 2%;
+  padding-left: 2%;
+}
