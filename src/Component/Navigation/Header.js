@@ -1,9 +1,8 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
-import { Toolbar, Typography, Tab, Tabs } from "@mui/material";
+import { Toolbar, Tab, Tabs } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-import { height } from "@mui/system";
 import { Button } from "@mui/base";
 
 export default function Header() {
@@ -25,10 +24,10 @@ export default function Header() {
               }}
             ></Tab>
           </Tabs>
-          
+
           <ShoppingBagIcon
             sx={{
-                color:'white',
+              color: "white",
               borderRadius: "25%",
               border: "1px solid white",
               fontSize: 40,
@@ -41,23 +40,25 @@ export default function Header() {
               borderRadius: "25%",
               border: "1px solid white",
               fontSize: 40,
-              
+
               marginLeft: "20px",
               marginRight: "30px",
             }}
           ></ShoppingCartIcon>
 
-
-           <Button
+          <Button
             variant="contained"
-            style={{ fontSize: "22px" , backgroundColor:'#91966c',borderRadius: "25px",
-            border: "1px solid white",color : 'white'}}
+            style={{
+              fontSize: "22px",
+              backgroundColor: "#91966c",
+              borderRadius: "25px",
+              cursor: "pointer", // Apply this style for other elements also 
+              border: "1px solid white",
+              color: "white",
+            }}
           >
             SignIn
           </Button>
-
-          {/* fontFamily : 'Brush Script MT, Brush Script Std, cursive' */}
-          
         </Toolbar>
       </AppBar>
     </React.Fragment>
