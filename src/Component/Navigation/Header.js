@@ -5,10 +5,12 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { Button } from "@mui/base";
 
+
 export default function Header() {
   return (
-    <React.Fragment>
-      <AppBar sx={{ background: "#91966c", height: "0px" }}>
+    <React.Fragment >
+      <div >
+      <AppBar sx={{ backgroundColor: "#91966c", position: "fixed", height: 60 , border:"none", boxShadow: "none" }} >
         <Toolbar>
           <Tabs sx={{ padding: 0, margin: 0 }}>
             <Tab
@@ -61,6 +63,7 @@ export default function Header() {
           </Button>
         </Toolbar>
       </AppBar>
+      </div>
     </React.Fragment>
   );
 }

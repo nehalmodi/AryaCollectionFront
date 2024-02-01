@@ -2,3 +2,14 @@
 .App{
     color: black;
 }
+
+.footer {
+    background-color: #91966c;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 2%;
+    color: white;
+
+}
+

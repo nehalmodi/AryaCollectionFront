@@ -16,6 +16,7 @@ export default function Home() {
   const [marginTop, setMarginTop] = useState("5%");
   const [marginBottom, setMarginBottom] = useState("0");
   const [flexDirection, setAlignment] = useState("row");
+  const [gap, setGap] = useState("20px");
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,10 +27,12 @@ export default function Home() {
         setMarginTop("20%");
         setMarginBottom("13%");
         setAlignment("column")
+        setGap("100px")
       } else {
         setMarginTop("5%");
         setMarginBottom("0");
         setAlignment("row")
+        setGap("20px")
       }
     };
 
@@ -56,7 +59,7 @@ export default function Home() {
           Perfect for everyday & Partywear
         </Typography>
       </div>
-      <div style={{ display: "flex", flexDirection, gap: "20px" , marginLeft:"10px",alignItems: 'center'}}>
+      <div style={{ display: "flex", flexDirection, gap: gap, marginLeft:"10px",alignItems: 'center'}}>
         <HomeCard marginTop={marginTop} />
         <HomeCard marginTop={marginTop} />
         <HomeCard marginTop={marginTop} />

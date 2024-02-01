@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -8,6 +9,43 @@ import kurti from "../../Images/Kurti.jpg";
 import Button from "@mui/material/Button";
 
 export default function HomeCard() {
+
+  const [boxWidth, setBoxWidth] = useState(300);
+  const [boxheight, setBoxHeight] = useState(230);
+  const [imageWidth, setImageWidth] = useState("35%");
+  const [imageHeight, setImageheight] = useState("50%");
+  const [marginLeft, setMarginLeft] = useState("20%");
+  
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      console.log(screenWidth)
+
+      if (screenWidth <= 1271) {
+        setBoxWidth(500)
+        setImageWidth("25%")
+        setImageheight("60%")
+        setBoxHeight(260)
+        setMarginLeft("45%")
+      } else {
+        setBoxWidth(300)
+        setImageWidth("35%")
+        setImageheight("50%")
+        setBoxHeight(230)
+        setMarginLeft("20%")
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
   return (
     <Box
       sx={{
@@ -18,8 +56,8 @@ export default function HomeCard() {
         marginTop: "3%",
         backgroundColor: "#f6f1eb",
         borderRadius: "20px",
-        width: 300,
-        height: 230,
+        width: boxWidth,
+        height: boxheight,
       }}
     >
       <Card
@@ -27,8 +65,8 @@ export default function HomeCard() {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          width: 300,
-          height: 230,
+          width: boxWidth,
+          height:boxheight,
           backgroundColor: "#f6f1eb",
           borderRadius: "20px",
         }}
@@ -53,9 +91,9 @@ export default function HomeCard() {
         <CardMedia
           component="img"
           sx={{
-            marginLeft: "20%",
-            width: "35%",
-            height: "50%",
+            marginLeft: marginLeft,
+            width: imageWidth,
+            height: imageHeight,
             borderRadius: "50%",
           }}
           image={kurti}
