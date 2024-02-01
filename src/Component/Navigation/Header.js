@@ -13,6 +13,7 @@ export default function Header() {
       <div >
       <AppBar sx={{ backgroundColor: "#91966c", position: "fixed", height: 60 , border:"none", boxShadow: "none" }} >
         <Toolbar>
+          <NavLink to="/" style={{textDecoration : "none"}}>
           <Tabs sx={{ padding: 0, margin: 0 }}>
             <Tab
               label="Arya Collection"
@@ -26,7 +27,7 @@ export default function Header() {
                 color: "white",
               }}
             ></Tab>
-          </Tabs>
+          </Tabs></NavLink>
 
           <ShoppingBagIcon
             sx={{
