@@ -72,7 +72,7 @@ export default function HomeCard() {
         }}
       >
         <CardContent>
-          <Typography component="div" variant="h5">
+          <Typography component="div" variant="h5" sx={{color:"#94722f"}}>
             Kurti
           </Typography>
           <Button

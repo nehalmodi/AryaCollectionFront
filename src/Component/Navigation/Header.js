@@ -4,6 +4,7 @@ import { Toolbar, Tab, Tabs } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { Button } from "@mui/base";
+import { NavLink } from "react-router-dom";
 
 
 export default function Header() {
@@ -47,8 +48,8 @@ export default function Header() {
               marginRight: "30px",
             }}
           ></ShoppingCartIcon>
-
-          <Button
+          <NavLink to = "/auth">
+          <Button 
             variant="contained"
             style={{
               fontSize: "22px",
@@ -61,6 +62,7 @@ export default function Header() {
           >
             SignIn
           </Button>
+          </NavLink>
         </Toolbar>
       </AppBar>
       </div>
