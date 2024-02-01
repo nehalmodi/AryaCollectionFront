@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import { autocompleteClasses } from "@mui/material";
+import { useState, useEffect } from "react";
 import {
     createTheme,
     ThemeProvider,
@@ -32,14 +33,40 @@ const theme = createTheme({
   },
 });
 
+
+
+const [marginTop , setMarginTop] = useState("");
+  
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      console.log(screenWidth)
+
+      if (screenWidth <= 1271) {
+        setMarginTop("30%")
+      } else {
+        setMarginTop("")
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
   return (
     <Card
       sx={{
         width: "90%",
         maxWidth: "25rem",
         margin: "7rem auto",
+        marginTop : marginTop,
         borderRadius : "25px",
-
         backgroundColor: "#f6f1eb",
       }}
     >
