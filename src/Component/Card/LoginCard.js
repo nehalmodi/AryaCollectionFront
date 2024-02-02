@@ -9,43 +9,43 @@ import TextField from "@mui/material/TextField";
 import { autocompleteClasses } from "@mui/material";
 import { useState, useEffect } from "react";
 import {
-    createTheme,
-    ThemeProvider,
-    alpha,
-    getContrastRatio,
-  } from '@mui/material/styles';
+  createTheme,
+  ThemeProvider,
+  alpha,
+  getContrastRatio,
+} from "@mui/material/styles";
 
 import { FormControl, FormLabel } from "@mui/material";
 
 export default function BasicCard() {
-    const violetBase = '#91966c';
-const violetMain = alpha(violetBase, 0.7);
+  const violetBase = "#91966c";
+  const violetMain = alpha(violetBase, 0.7);
 
-const theme = createTheme({
-  palette: {
-    violet: {
-      main: violetMain,
-      light: alpha(violetBase, 0.5),
-      dark: alpha(violetBase, 0.9),
-      contrastText:  '#fff' 
-      
+  const theme = createTheme({
+    palette: {
+      violet: {
+        main: violetMain,
+        light: alpha(violetBase, 0.5),
+        dark: alpha(violetBase, 0.9),
+        contrastText: "#fff",
+      },
     },
-  },
-});
+  });
 
+  const [marginTop, setMarginTop] = useState("");
+  const [isLogin , setIsLogin ] = useState(true)
+ 
+  const loginButtonDisabled = false;
 
-
-const [marginTop , setMarginTop] = useState("");
-  
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      console.log(screenWidth)
+      console.log(screenWidth);
 
       if (screenWidth <= 1271) {
-        setMarginTop("30%")
+        setMarginTop("30%");
       } else {
-        setMarginTop("")
+        setMarginTop("");
       }
     };
 
@@ -58,6 +58,14 @@ const [marginTop , setMarginTop] = useState("");
     };
   }, []);
 
+  const switchModeHandler = () => {
+    setIsLogin(!isLogin)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("form submitted");
+  }
 
   return (
     <Card
@@ -65,8 +73,8 @@ const [marginTop , setMarginTop] = useState("");
         width: "90%",
         maxWidth: "25rem",
         margin: "7rem auto",
-        marginTop : marginTop,
-        borderRadius : "25px",
+        marginTop: marginTop,
+        borderRadius: "25px",
         backgroundColor: "#f6f1eb",
       }}
     >
@@ -77,48 +85,119 @@ const [marginTop , setMarginTop] = useState("");
             fontWeight: 550,
             fontSize: 30,
             textAlign: "center",
+            marginBottom : 6
           }}
         >
-          LOGIN
+          {isLogin ? "LOGIN" : "Signup"}
         </Typography>
 
-        <FormControl>
-          <FormLabel sx={{
-            marginTop : 5
-          }}>USERNAME</FormLabel>
-          <TextField size="small" borderRadius = "0" sx={{
-            marginTop : 1,
-            backgroundColor:"#cbbaa6",
-            border : "1px solid black",
-            borderRadius : 0,
-            width : "150%"
-          }}></TextField>
+        <form onSubmit={handleSubmit}>
 
-<FormLabel sx={{
-            marginTop : 5
-          }}>PASSWORD</FormLabel>
-          <TextField size="small" borderRadius = "0" sx={{
-            marginTop : 1,
-            backgroundColor:"#cbbaa6",
-            border : "1px solid black",
-            borderRadius : 0,
-            width : "150%"
-          }}></TextField>
+        {!isLogin && (<><FormLabel
+            sx={{
+              marginTop: 5,
+            }}
+          >
+            NAME
+          </FormLabel>
+          <TextField
+            size="small"
+            borderRadius="0"
+            sx={{
+              marginTop: 1,
+              marginBottom: 2,
+              backgroundColor: "#cbbaa6",
+              border: "1px solid black",
+              borderRadius: 0,
+              width: "100%",
+            }}
+          ></TextField></>)}
+
+          <FormLabel
+            sx={{
+              marginTop: 5,
+            }}
+          >
+           {isLogin ? "USERNAME" : "EMAIL"}
+          </FormLabel>
+          <TextField
+            size="small"
+            borderRadius="0"
+            sx={{
+              marginTop: 1,
+              marginBottom: 2,
+              backgroundColor: "#cbbaa6",
+              border: "1px solid black",
+              borderRadius: 0,
+              width: "100%",
+            }}
+          ></TextField>
+
+          {!isLogin && (<><FormLabel
+            sx={{
+              marginTop: 5,
+            }}
+          >
+            MOBILE NUMBER
+          </FormLabel>
+          <TextField
+            size="small"
+            borderRadius="0"
+            sx={{
+              marginTop: 1,
+              marginBottom: 2,
+              backgroundColor: "#cbbaa6",
+              border: "1px solid black",
+              borderRadius: 0,
+              width: "100%",
+            }}
+          ></TextField></>)}
+
+          <FormLabel
+            sx={{
+              marginTop: 5,
+            }}
+          >
+            PASSWORD
+          </FormLabel>
+          <TextField
+            size="small"
+            borderRadius="0"
+            sx={{
+              marginTop: 1,
+              marginBottom: 2,
+              backgroundColor: "#cbbaa6",
+              border: "1px solid black",
+              borderRadius: 0,
+              width: "100%",
+            }}
+          ></TextField>
           <ThemeProvider theme={theme}>
-          <Button variant="contained" color="violet" sx={{
-            marginTop : "10%",
-            marginLeft :"60%",
-            borderRadius : 25,
-            
-          }}>LOGIN</Button>
-          <Button variant="contained" color="violet" sx={{
-            marginTop : "10%",
-            marginLeft :"60%",
-            borderRadius : 25,
-            
-          }}>SIGNUP</Button>
+            <Button type = "submit"
+              variant="contained"
+              color="violet"
+              disabled={loginButtonDisabled}
+              sx={{
+                marginTop: "10%",
+                marginLeft: "40%",
+                borderRadius: 25,
+              }}
+            >
+              {isLogin? "LOGIN" : "SIGNUP"}
+            </Button>
+            <Button onClick={switchModeHandler}
+              variant="contained"
+              color="violet"
+              sx={{
+                marginTop: "5%",
+                marginLeft: "40%",
+                borderRadius: 25,
+              }}
+            >
+              {isLogin? "SIGNUP" : "LOGIN"}
+            </Button>
           </ThemeProvider>
-        </FormControl>
+        </form>
       </CardContent>
     </Card>
   );
