@@ -7,8 +7,15 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import kurti from "../../Images/Kurti.jpg";
 import Button from "@mui/material/Button";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function HomeCard() {
+export default function HomeCard( props) {
+
+  const handleClick = () =>  {
+    return(
+      <NavLink to="/content"></NavLink>)
+  }
 
   const [boxWidth, setBoxWidth] = useState(300);
   const [boxheight, setBoxHeight] = useState(230);
@@ -73,9 +80,10 @@ export default function HomeCard() {
       >
         <CardContent>
           <Typography component="div" variant="h5" sx={{color:"#94722f"}}>
-            Kurti
+            {props.name}
           </Typography>
-          <Button
+          <Link to={`/${props.name}/content`}>
+          <Button onClick={handleClick}
             sx={{
               backgroundColor: "#91966c",
               color: "white",
@@ -83,10 +91,10 @@ export default function HomeCard() {
               marginTop: "20%",
             }}
             variant="contained"
-            href="#contained-buttons"
+            
           >
             Link
-          </Button>
+          </Button> </Link>
         </CardContent>
         <CardMedia
           component="img"

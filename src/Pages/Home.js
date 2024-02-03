@@ -60,10 +60,10 @@ export default function Home() {
         </Typography>
       </div>
       <div style={{ display: "flex", flexDirection, gap: gap, marginLeft:"10px",alignItems: 'center'}}>
-        <HomeCard marginTop={marginTop} />
-        <HomeCard marginTop={marginTop} />
-        <HomeCard marginTop={marginTop} />
-        <HomeCard marginTop={marginTop} />
+        <HomeCard marginTop={marginTop} name={"Kurti"} />
+        <HomeCard marginTop={marginTop}  name={"Plazo"}/>
+        <HomeCard marginTop={marginTop}  name={"Dupatta"}/>
+        <HomeCard marginTop={marginTop}  name={"Set"}/>
       </div>
     </React.Fragment>
   );
