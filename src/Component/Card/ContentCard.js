@@ -28,7 +28,7 @@ export default function ContentCard(props) {
       <CardActions sx={{
         marginTop : -3
       }}>
-        <Link to="#">
+        <Link to="/p1/description">
           <Button 
             sx={{
               backgroundColor: "#91966c",

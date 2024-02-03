@@ -1,21 +1,17 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
-import { autocompleteClasses } from "@mui/material";
 import { useState, useEffect } from "react";
 import {
   createTheme,
   ThemeProvider,
   alpha,
-  getContrastRatio,
 } from "@mui/material/styles";
 
-import { FormControl, FormLabel } from "@mui/material";
+import {  FormLabel } from "@mui/material";
 
 export default function BasicCard() {
   const violetBase = "#91966c";

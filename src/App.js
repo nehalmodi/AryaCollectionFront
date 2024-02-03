@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import Footer from "./Component/Footer/Footer";
 import Auth from "./Pages/Auth";
 import Content from "./Pages/Content";
+import Description from "./Pages/Description";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </Route>
 
         <Route path="/:name/content" element={<Content />}></Route>
+        <Route path="/:pid/description" element={<Description />}></Route>
         <Route path="/about"></Route>
       </Routes>
       <Footer></Footer>
