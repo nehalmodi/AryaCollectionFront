@@ -1,0 +1,43 @@
+/* Default styles */
+.content-card {
+    background-color: #f6f1eb !important;
+    border: 1px solid #94722f;
+    border-radius: 5px !important;
+  }
+  
+  .card-media {
+    height: 250px;
+    margin: 1px;
+    border-radius: 2px;
+  }
+  
+  .title {
+    margin-top: -2px !important;
+  }
+  
+  .price {
+    margin-top: 1px !important;
+    color: #94722f;
+  }
+  
+  .card-actions {
+    margin-top: -3px;
+  }
+  
+  .button {
+    background-color: #91966c !important;
+    color: white !important;
+    font-weight: bold !important;
+    margin-top: 20% !important;
+    margin-left: 10% !important;
+    margin-bottom: 5% !important;
+  }
+  
+
+  @media (max-width: 981px) {
+    .content-card {
+      border-radius: 0 !important; 
+    }
+    
+  }
+  

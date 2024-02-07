@@ -9,6 +9,7 @@ import kurti from "../../Images/Kurti.jpg";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import './HomeCard.css'
 
 export default function HomeCard( props) {
 
@@ -17,7 +18,7 @@ export default function HomeCard( props) {
       <NavLink to="/content"></NavLink>)
   }
 
-  const [boxWidth, setBoxWidth] = useState(300);
+const [boxWidth, setBoxWidth] = useState(300);
   const [boxheight, setBoxHeight] = useState(230);
   const [imageWidth, setImageWidth] = useState("35%");
   const [imageHeight, setImageheight] = useState("50%");
@@ -54,20 +55,8 @@ export default function HomeCard( props) {
 
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "15px",
-        marginLeft: "0px",
-        marginTop: "3%",
-        backgroundColor: "#f6f1eb",
-        borderRadius: "20px",
-        width: boxWidth,
-        height: boxheight,
-      }}
-    >
-      <Card
+    <Box className = "box">
+      <Card className="card"
         sx={{
           display: "flex",
           flexDirection: "row",
